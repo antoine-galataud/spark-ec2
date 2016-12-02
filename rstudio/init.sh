@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # download rstudio 
-wget http://download2.rstudio.org/rstudio-server-rhel-0.99.446-x86_64.rpm
+wget http://s3.cn-north-1.amazonaws.com.cn/spark-related-packages/rstudio-server-rhel-0.99.446-x86_64.rpm
 sudo yum install --nogpgcheck -y rstudio-server-rhel-0.99.446-x86_64.rpm
 
 # restart rstudio 
