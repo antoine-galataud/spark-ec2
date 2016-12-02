@@ -484,7 +484,7 @@ def get_spark_ami(opts):
 
     # URL prefix from which to fetch AMI information
     ami_prefix = "{r}/{b}/ami-list".format(
-        r=opts.spark_ec2_git_repo.replace("https://github.com", "https://raw.github.com", 1),
+        r=opts.spark_ec2_git_repo.replace("http://github.com", "http://raw.github.com", 1),
         b=opts.spark_ec2_git_branch)
 
     ami_path = "%s/%s/%s" % (ami_prefix, opts.region, instance_type)
@@ -1355,7 +1355,7 @@ def real_main():
     # Prevent forks with non spark-ec2 names for now.
     if opts.spark_ec2_git_repo.endswith("/") or \
             opts.spark_ec2_git_repo.endswith(".git") or \
-            not opts.spark_ec2_git_repo.startswith("https://github.com") or \
+            not opts.spark_ec2_git_repo.startswith("http://github.com") or \
             not opts.spark_ec2_git_repo.endswith("spark-ec2"):
         print("spark-ec2-git-repo must be a github repo and it must not have a trailing / or .git. "
               "Furthermore, we currently only support forks named spark-ec2.", file=stderr)
